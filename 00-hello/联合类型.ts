@@ -262,3 +262,8 @@ interface PersonPartial {
   name?: string;
   age?: number;
 }
+
+interface PersonPartialReadonly {
+  name?: string;
+  age?: number;
+}
