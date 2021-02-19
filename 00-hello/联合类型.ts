@@ -180,3 +180,46 @@ let ss = people.name;
 ss = people.next.name;
 ss = people.next.next.name;
 ss = people.next.next.next.name;
+
+type Alias = { num: number }
+
+interface Interface {
+  num: number;
+}
+
+declare function aliased (arg: Alias): Alias;
+
+declare function interfaced (arg: Interface): Interface;
+
+/* ========================================== 可辨识联合 ========================================== */
+
+interface Square {
+  kind: 'square';
+  size: number;
+}
+
+interface Rectangle {
+  kind: 'rectangle';
+  width: number;
+  height: number;
+}
+
+interface Circle {
+  kind: 'circle';
+  radius: number;
+}
+
+type Shape = Square | Rectangle | Circle;
+
+function area (s: Shape): number {
+  switch (s.kind) {
+    case 'square':
+      return s.size * s.size;
+
+    case 'rectangle':
+      return s.height * s.width;
+
+    case 'circle':
+      return Math.PI * s.radius ** 2;
+  }
+}
