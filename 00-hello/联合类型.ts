@@ -223,3 +223,42 @@ function area (s: Shape): number {
       return Math.PI * s.radius ** 2;
   }
 }
+
+// 索引类型
+function pluck<T, K extends keyof T> (o: T, names: K[]): T[K][] {
+  return names.map(n => o[n]);
+}
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+const person: Person = {
+  name: 'Jarid',
+  age: 35
+};
+
+const strings: string [] = pluck(person, [ 'name' ]);
+
+// pluck(person, [ 'age', 'unl' ]) // Error
+
+function getProperty<T, K extends keyof T> (o: T, name: K): T[K] {
+  return o[name];
+}
+
+getProperty(person, 'name');
+getProperty(person, 'age');
+
+interface Map<T> {
+  [key: string]: T;
+}
+
+let keys: keyof Map<number>;
+let value: Map<number>['foo'];
+
+// 映射类型
+interface PersonPartial {
+  name?: string;
+  age?: number;
+}
