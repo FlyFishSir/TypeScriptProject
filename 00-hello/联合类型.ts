@@ -111,8 +111,72 @@ function getRandomPadder () {
 let padder: Padder = getRandomPadder();
 
 if (padder instanceof SpaceRepeatingPadder) {
-  padder; // 类型细化为'SpaceRepeatingPadder'
+  console.log('SpaceRepatingPadder', padder); // 类型细化为'SpaceRepeatingPadder'
 }
+
 if (padder instanceof StringPadder) {
-  padder; // 类型细化为'StringPadder'
+  console.log('StringPadder', padder); // 类型细化为'StringPadder'
 }
+
+// 可以为null类型
+// --strictNullChecks标记可以解决此错误：当你声明一个变量时，它不会自动地包含 null或 undefined
+let sn: string | null = 'bar';
+sn = null;
+// sn = undefined; // error
+
+// 使用了 --strictNullChecks，可选参数会被自动地加上 | undefined:
+function f (x: number, y?: number) {
+  return x + (y || 0);
+}
+
+f(1);
+f(1, 2);
+f(1, undefined);
+// f(1, null); // error
+
+// 类型保护和类型断言
+function broken (name: string | null): string {
+  name = name || 'Bob';
+
+  function postfix (epithet: string) {
+    return name.charAt(0) + '. the' + epithet;
+  }
+
+  return postfix('great');
+}
+
+function fixed (name: string | null): string {
+  name = name || 'Bob';
+
+  function postfix (epithet: string) {
+    return name!.charAt(0) + '. the' + epithet;
+  }
+
+  return postfix('great');
+}
+
+// 类型别名
+type Name = string;
+type Resolver = () => string;
+type NameOrResolver = Name | Resolver;
+
+function getName (n: NameOrResolver): Name {
+  if (typeof n === 'string') {
+    return n;
+  } else {
+    return n();
+  }
+}
+
+type Container<T> = { value: T };
+type LinkedList<T> = T & { next: LinkedList<T> };
+
+interface Person {
+  name: string;
+}
+
+let people: LinkedList<Person>;
+let ss = people.name;
+ss = people.next.name;
+ss = people.next.next.name;
+ss = people.next.next.next.name;
