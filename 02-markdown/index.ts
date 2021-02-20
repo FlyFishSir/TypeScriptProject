@@ -62,7 +62,6 @@ class TagTypeToHtml {
 //#region Markdown document
 interface IMarkdownDocument {
   Add (...content: string[]): void;
-
   Get (): string;
 }
 
@@ -130,7 +129,7 @@ class Visitable implements IVisitable {
 }
 
 abstract class VisitorBase implements IVisitor {
-  constructor (
+  protected constructor (
     private readonly tagType: TagType,
     private readonly TageTypeToHtml: TagTypeToHtml
   ) {
