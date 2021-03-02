@@ -284,6 +284,7 @@ class ChainOfResponsibilityFactory {
 }
 
 class Markdown {
+  // 转换成HTML
   public ToHtml (text: string): string {
     let document: IMarkdownDocument = new MarkdownDocument();
     let header1: Header1ChainHandler = new ChainOfResponsibilityFactory().Build(document);
@@ -301,6 +302,7 @@ class Markdown {
 class HtmlHandler {
   private markdownChange: Markdown = new Markdown;
 
+  // 文本输入处理
   public TextChangeHandler (id: string, output: string): void {
     let markdown = <HTMLTextAreaElement>document.getElementById(id);
     let markdownOutput = <HTMLLabelElement>document.getElementById(output);
@@ -316,6 +318,7 @@ class HtmlHandler {
     }
   }
 
+  // 渲染HTML
   private RenderHtmlContent (markdown: HTMLTextAreaElement, markdownOutput: HTMLLabelElement) {
     if (markdown.value) {
       markdownOutput.innerHTML = this.markdownChange.ToHtml(markdown.value);
