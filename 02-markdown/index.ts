@@ -132,8 +132,7 @@ abstract class VisitorBase implements IVisitor {
   protected constructor (
     private readonly tagType: TagType,
     private readonly TageTypeToHtml: TagTypeToHtml
-  ) {
-  }
+  ) {}
 
   Visit (token: ParseElement, markdownDocument: IMarkdownDocument): void {
     markdownDocument.Add(
