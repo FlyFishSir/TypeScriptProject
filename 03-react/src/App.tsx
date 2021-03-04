@@ -26,7 +26,6 @@ function App () {
     <Container>
       <PersonalDetails/>
     </Container>
-
   );
 }
 
