@@ -3,6 +3,10 @@ import Button from 'reactstrap/lib/Button';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 
+/**
+ * 浙A·6A66A
+ * 浙A·66AA6
+ */
 export default class PersonalDetails extends React.Component<any, any> {
   public render () {
     return (
