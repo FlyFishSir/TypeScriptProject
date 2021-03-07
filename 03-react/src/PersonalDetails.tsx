@@ -3,10 +3,6 @@ import Button from 'reactstrap/lib/Button';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 
-/**
- * 浙A·6A66A
- * 浙A·66AA6
- */
 export default class PersonalDetails extends React.Component<any, any> {
   public render () {
     return (
@@ -54,18 +50,18 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <input
-                type="text"
-                id="addr1"
-                className="form-control"
-                placeholder="Address line 1"
-                value={ this.state.Address1 }
-                onChange={ this.updateBinding }
-              />
-            </Col>
-          </Row>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      id="addr1"*/}
+          {/*      className="form-control"*/}
+          {/*      placeholder="Address line 1"*/}
+          {/*      value={ this.state.Address1 }*/}
+          {/*      onChange={ this.updateBinding }*/}
+          {/*    />*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
           <Row>
             <Col>
@@ -73,18 +69,18 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <input
-                type="text"
-                id="addr2"
-                className="form-control"
-                placeholder="Address line 2"
-                value={ this.state.Address2! }
-                onChange={ this.updateBinding }
-              />
-            </Col>
-          </Row>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      id="addr2"*/}
+          {/*      className="form-control"*/}
+          {/*      placeholder="Address line 2"*/}
+          {/*      value={ this.state.Address2! }*/}
+          {/*      onChange={ this.updateBinding }*/}
+          {/*    />*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
           <Row>
             <Col>
@@ -92,18 +88,18 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <input
-                type="text"
-                id="town"
-                className="form-control"
-                placeholder="Town"
-                value={ this.state.Town }
-                onChange={ this.updateBinding }
-              />
-            </Col>
-          </Row>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      id="town"*/}
+          {/*      className="form-control"*/}
+          {/*      placeholder="Town"*/}
+          {/*      value={ this.state.Town }*/}
+          {/*      onChange={ this.updateBinding }*/}
+          {/*    />*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
           <Row>
             <Col>
@@ -111,18 +107,18 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <input
-                type="text"
-                id="county"
-                className="form-control"
-                placeholder="County"
-                value={ this.state.County }
-                onChange={ this.updateBinding }
-              />
-            </Col>
-          </Row>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      id="county"*/}
+          {/*      className="form-control"*/}
+          {/*      placeholder="County"*/}
+          {/*      value={ this.state.County }*/}
+          {/*      onChange={ this.updateBinding }*/}
+          {/*    />*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
           <Row>
             <Col>
@@ -133,31 +129,31 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <Row>
-                <Col lg="3">
-                  <input
-                    type="text"
-                    id="postcode"
-                    className="form-control"
-                    value={ this.state.Postcode }
-                    onChange={ this.updateBinding }
-                  />
-                </Col>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <Row>*/}
+          {/*      <Col lg="3">*/}
+          {/*        <input*/}
+          {/*          type="text"*/}
+          {/*          id="postcode"*/}
+          {/*          className="form-control"*/}
+          {/*          value={ this.state.Postcode }*/}
+          {/*          onChange={ this.updateBinding }*/}
+          {/*        />*/}
+          {/*      </Col>*/}
 
-                <Col lg="4">
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    className="form-control"
-                    value={ this.state.PhoneNumber }
-                    onChange={ this.updateBinding }
-                  />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          {/*      <Col lg="4">*/}
+          {/*        <input*/}
+          {/*          type="text"*/}
+          {/*          id="phoneNumber"*/}
+          {/*          className="form-control"*/}
+          {/*          value={ this.state.PhoneNumber }*/}
+          {/*          onChange={ this.updateBinding }*/}
+          {/*        />*/}
+          {/*      </Col>*/}
+          {/*    </Row>*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
           <Row>
             <Col>
@@ -165,68 +161,68 @@ export default class PersonalDetails extends React.Component<any, any> {
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <input
-                type="date"
-                id="dateOfBirth"
-                value={ this.state.DateOfBirth! }
-                onChange={ this.updateBinding }
-              />
-            </Col>
-          </Row>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <input*/}
+          {/*      type="date"*/}
+          {/*      id="dateOfBirth"*/}
+          {/*      value={ this.state.DateOfBirth! }*/}
+          {/*      onChange={ this.updateBinding }*/}
+          {/*    />*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
-          <Row>
-            <Col>
-              <Button
-                size="lg"
-                color="primary"
-                onClick={ this.savePerson }
-              >Save</Button>
-            </Col>
+          {/*<Row>*/}
+          {/*  <Col>*/}
+          {/*    <Button*/}
+          {/*      size="lg"*/}
+          {/*      color="primary"*/}
+          {/*      onClick={ this.savePerson }*/}
+          {/*    >Save</Button>*/}
+          {/*  </Col>*/}
 
-            <Col>
-              <Button
-                size="lg"
-                color="secondary"
-                onClick={ this.clear }
-              >Clear</Button>
-            </Col>
-          </Row>
+          {/*  <Col>*/}
+          {/*    <Button*/}
+          {/*      size="lg"*/}
+          {/*      color="secondary"*/}
+          {/*      onClick={ this.clear }*/}
+          {/*    >Clear</Button>*/}
+          {/*  </Col>*/}
+          {/*</Row>*/}
 
-          <Row>
-            <FormValidation
-              CurrentState={ this.state }
-              CanSave={ this.userCanSave }
-            />
-          </Row>
+          {/*<Row>*/}
+          {/*  <FormValidation*/}
+          {/*    CurrentState={ this.state }*/}
+          {/*    CanSave={ this.userCanSave }*/}
+          {/*  />*/}
+          {/*</Row>*/}
         </Col>
 
-        <Col>
-          <Col>
-            <Row>
-              <Col>{ people }</Col>
-            </Row>
+        {/*<Col>*/}
+        {/*  <Col>*/}
+        {/*    <Row>*/}
+        {/*      <Col>{ people }</Col>*/}
+        {/*    </Row>*/}
 
-            <Row>
-              <Col lg="6">
-                <Button
-                  size="lg"
-                  color="success"
-                  onClick={ this.loadPeople }
-                >Load</Button>
-              </Col>
+        {/*    <Row>*/}
+        {/*      <Col lg="6">*/}
+        {/*        <Button*/}
+        {/*          size="lg"*/}
+        {/*          color="success"*/}
+        {/*          onClick={ this.loadPeople }*/}
+        {/*        >Load</Button>*/}
+        {/*      </Col>*/}
 
-              <Col lg="6">
-                <Button
-                  size="lg"
-                  color="info"
-                  onClick={ this.clear }
-                >New Person</Button>
-              </Col>
-            </Row>
-          </Col>
-        </Col>
+        {/*      <Col lg="6">*/}
+        {/*        <Button*/}
+        {/*          size="lg"*/}
+        {/*          color="info"*/}
+        {/*          onClick={ this.clear }*/}
+        {/*        >New Person</Button>*/}
+        {/*      </Col>*/}
+        {/*    </Row>*/}
+        {/*  </Col>*/}
+        {/*</Col>*/}
       </Row>
     );
   }
