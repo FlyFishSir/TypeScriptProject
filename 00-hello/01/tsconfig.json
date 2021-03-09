@@ -5,7 +5,20 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "AMD",
+
+    // 制定编译后文件所在目录
     "outDir": "./dist",
-    /*"outFile": "./dist/app.js"*/
+
+    // 将代码合并成一个文件
+    /*"outFile": "./dist/app.js",  */
+
+    // 检查JS代码是否符合语法规范
+    "checkJs": false,
+
+    // 对JS文件进行编译
+    "allowJs": false,
+
+    // 移除注释
+    "removeComments": true,
   }
 }
