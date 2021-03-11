@@ -7,17 +7,41 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    environment: {
+      arrowFunction: false
+    }
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  // 指定环境的插件
+                  '@babel/preset-env',
+                  // 配置信息
+                  {
+                    targets: {
+                      'chrome': '88'
+                    },
+                    'corejs': '3',
+                    'useBuiltIns': 'usage'
+                  }
+                ]
+              ]
+            }
+          },
+          'ts-loader'
+        ],
         exclude: /node-modules/
       }
     ]
