@@ -1,0 +1,101 @@
+$bg-color: aliceblue;
+$bd-color: black;
+
+$leftList: (
+  1: 80px,
+  2: 60px,
+  3: 40px
+);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  width: 600px;
+  height: 800px;
+  margin: 130px auto 0;
+  background-color: $bg-color;
+  border: 10px solid $bd-color;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+
+  #game {
+    width: 504px;
+    height: 504px;
+    border: 2px solid $bd-color;
+    position: relative;
+
+    #food {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 40px;
+      left: 120px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      i {
+        width: 6px;
+        height: 6px;
+        background-color: firebrick;
+        margin: 2px;
+        transform: rotate(45deg);
+      }
+    }
+
+    #snake {
+
+      & > i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 60px;
+        background-color: cadetblue;
+
+        &:first-child {
+          background-color: coral;
+
+          &::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        @each $i, $left in $leftList {
+          &:nth-child(#{$i}) {
+            left: $left;
+          }
+        }
+      }
+    }
+  }
+
+  #info {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font: 30px bold;
+  }
+}
