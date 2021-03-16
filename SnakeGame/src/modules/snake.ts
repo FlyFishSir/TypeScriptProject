@@ -3,25 +3,71 @@
  * desc: Snake
  */
 export default class Snake {
-  private x = 0;
-  private y = 0;
   private Snake = document.getElementById('snake')!;
   private Head = document.getElementById('head')!;
-  private Bodies = this.Snake.getElementsByTagName('i');
+  Bodies = this.Snake.getElementsByTagName('i')!;
 
-  get X () {
+  get x () {
     return this.Head.offsetLeft;
   }
 
-  set X (value) {
-    this.Head.style.left = value + 'px';
+  set x (value) {
+    this.set('x', 'left', value);
   }
 
-  get Y () {
+  get y () {
     return this.Head.offsetTop;
   }
 
-  set Y (value) {
-    this.Head.style.top = value + 'px';
+  set y (value) {
+    this.set('y', 'top', value);
+  }
+
+  set (axis: string, pos: string, value: number) {
+    if (this[axis] === value) return;
+
+    if (value < 0 || value > 500 - 20) {
+      throw Error('snake against wall!');
+    }
+
+    // 上下方向不能掉头
+    if (this.Bodies[1] && Number.parseInt(this.Bodies[1].style[pos]) === value) {
+      if (value > this[axis]) {
+        value = this[axis] - 20;
+      } else {
+        value = this[axis] + 20;
+      }
+    }
+
+    this.moveBodies();
+    this.Head.style[pos] = value + 'px';
+    this.checkHeadAndBody();
+  }
+
+  /**
+   * 添加snake身体
+   */
+  addBodies () {
+    this.Snake.insertAdjacentHTML('beforeend', '<i></i>');
+  }
+
+  /**
+   * 移动snake身体
+   */
+  moveBodies () {
+    for (let i = this.Bodies.length - 1; i > 0; i--) {
+      this.Bodies[i].style.left = this.Bodies[i - 1].style.left;
+      this.Bodies[i].style.top = this.Bodies[i - 1].style.top;
+    }
+  }
+
+  /**
+   * 检测头是否与身体发生碰撞
+   */
+  checkHeadAndBody () {
+    for (let i = 1; i < this.Bodies.length; i++) {
+      const { left, top } = this.Bodies[i].style;
+      if (Number.parseInt(left) === this.x && Number.parseInt(top) === this.y) throw Error('头碰到自己身体！');
+    }
   }
 }

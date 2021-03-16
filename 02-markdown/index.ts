@@ -53,7 +53,7 @@ class TagTypeToHtml {
       return `${ openingTagPattern }${ tag }>`;
     }
 
-    return `${ openingTagPattern }${ tag }>`;
+    return `${ openingTagPattern }p>`;
   }
 }
 

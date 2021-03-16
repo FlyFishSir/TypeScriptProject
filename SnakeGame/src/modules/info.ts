@@ -3,13 +3,16 @@
  * desc: Info
  */
 export default class Info {
-  private score: number = 0;
-  private level: number = 1;
-  private Score: HTMLElement = document.getElementById('score');
-  private Level: HTMLElement = document.getElementById('level');
+  score: number = 0;
+  level: number = 1;
+  private Score: HTMLElement = document.getElementById('score')!;
+  private Level: HTMLElement = document.getElementById('level')!;
 
   constructor (private maxLever = 10) {}
 
+  /**
+   * 加分
+   */
   addScore () {
     this.Score.innerHTML = ++this.score + '';
 
@@ -18,6 +21,9 @@ export default class Info {
     }
   }
 
+  /**
+   * 提升等级
+   */
   addLevel () {
     if (this.level >= this.maxLever) return;
     this.Level.innerHTML = ++this.level + '';
